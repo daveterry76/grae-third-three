@@ -19,18 +19,33 @@ const Login = ({ name, setName, track, setTrack }) => {
 
   return (
     <>
-        <div>
-            <h2>This is the Login Page:</h2>
-
-            <label>Name:</label> <br />
-            <input className='border' value={name} onChange={(e) => setName(e.target.value)} /> <br />
-            <label>Track:</label> <br />
-            <input className='border' value={track} onChange={(e) => setTrack(e.target.value)} /> <br />
-
-            <button className='border' onClick={handleLogin}>LOGIN</button>
+      <div className="w-full max-w-xs mx-auto mt-10">
+        <h2 className="text-2xl text-center font-semibold">Login Page</h2>
+        <div className="mt-4">
+          <label className="block text-sm">Name:</label>
+          <input
+            className="w-full px-3 py-2 mt-1 border rounded-lg focus:outline-none focus:ring focus:border-blue-300"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+          />
         </div>
+        <div className="mt-4">
+          <label className="block text-sm">Track:</label>
+          <input
+            className="w-full px-3 py-2 mt-1 border rounded-lg focus:outline-none focus:ring focus:border-blue-300"
+            value={track}
+            onChange={(e) => setTrack(e.target.value)}
+          />
+        </div>
+        <button
+          className="w-full py-2 mt-6 font-semibold text-white bg-blue-500 rounded-lg focus:outline-none hover:bg-blue-600"
+          onClick={handleLogin}
+        >
+          LOGIN
+        </button>
+      </div>
     </>
-  )
+  );
 }
 
 export default Login
