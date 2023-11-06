@@ -12,7 +12,9 @@ const Login = ({ name, setName, track, setTrack }) => {
             localStorage.setItem('name', name);
             localStorage.setItem('track', track);
             navigate('/dashboard');
-        } else return null
+        } else {
+          alert("Please fill in the fields");
+        }
     }
 
 
