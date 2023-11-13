@@ -6,6 +6,7 @@ import axios from 'axios';
 const ProductsGallery = () => {
   const [products, setProducts] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [touchStartX, setTouchStartX] = useState(null);
 
   const productRef = useRef();
 
@@ -40,8 +41,40 @@ const ProductsGallery = () => {
     }
   };
 
+  const handleTouchStart = (e) => {
+    // Capture the starting X coordinate of the touch
+    setTouchStartX(e.touches[0].clientX);
+  };
+
+  const handleTouchMove = (e) => {
+    // Calculate the distance moved during the touch
+    const touchEndX = e.touches[0].clientX;
+    const deltaX = touchEndX - touchStartX;
+
+    // Determine the direction of the swipe and update the currentIndex accordingly
+    if (deltaX > 50 && currentIndex > 0) {
+      setCurrentIndex(currentIndex - 1);
+    } else if (deltaX < -50 && currentIndex < products.length - 1) {
+      setCurrentIndex(currentIndex + 1);
+    }
+  };
+
+  const handleTouchEnd = () => {
+    // Reset the touchStartX after the touch ends
+    setTouchStartX(null);
+  };
+
   return (
-    <div ref={productRef} onClick={handleFocus} onKeyDown={handleKeyDown} tabIndex="0" style={{ outline: 'none' }}>
+    <div 
+      ref={productRef} 
+      onClick={handleFocus} 
+      onKeyDown={handleKeyDown} 
+      onTouchStart={handleTouchStart}
+      onTouchMove={handleTouchMove}
+      onTouchEnd={handleTouchEnd}
+      tabIndex="0" 
+      style={{ outline: 'none' }}
+    >
       {products?.map((product, index) => (
         <div key={product?.id} 
           style={{
