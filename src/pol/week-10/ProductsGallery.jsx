@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useRef } from 'react';
+import axios from 'axios';
+
 
 const ProductsGallery = () => {
   const [products, setProducts] = useState([]);
@@ -13,6 +15,13 @@ const ProductsGallery = () => {
 
   useEffect(() => {
     const fetchProducts = async () => {
+      try{
+        const response = await axios.get('https://dummyjson.com/products');
+        setProducts(response.product)
+      } catch (error){
+        console.log("An error occured:", error)
+      }
+
       // Fetch the products using this API endpoint: 
       // https://dummyjson.com/products
       // Use the try-catch statement
