@@ -1,7 +1,13 @@
 import React from 'react'
+import { useEffect } from 'react'
 import ProductsGallery from './ProductsGallery'
 
 const Week10 = () => {
+
+  useEffect(() => {
+    document.title = 'Products Gallery';
+  }, []);
+
   return (
     <>
         <div className='px-20 text-center'>
