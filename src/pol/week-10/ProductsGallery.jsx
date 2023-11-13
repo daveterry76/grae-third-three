@@ -16,8 +16,10 @@ const ProductsGallery = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try{
-        const response = await axios.get('https://dummyjson.com/products');
-        setProducts(response.products)
+        const { data } = await axios.get('https://dummyjson.com/products');
+        const { products } = data;
+        console.log(products);
+        setProducts(products);
       } catch (error){
         console.log("An error occured:", error)
       }
