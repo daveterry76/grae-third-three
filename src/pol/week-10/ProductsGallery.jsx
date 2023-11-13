@@ -17,7 +17,7 @@ const ProductsGallery = () => {
     const fetchProducts = async () => {
       try{
         const response = await axios.get('https://dummyjson.com/products');
-        setProducts(response.product)
+        setProducts(response.products)
       } catch (error){
         console.log("An error occured:", error)
       }
