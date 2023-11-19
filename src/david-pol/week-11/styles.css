@@ -1,0 +1,79 @@
+
+/* .david {
+    transition: background-color 0.5s ease-in 0.3s;
+} */
+
+
+.david {
+    font-size: 30px;
+    transition-property: background-color;
+    transition-duration: 0.5s;
+    transition-timing-function: ease-in;
+    transition-delay: 0.3s;
+}
+
+
+
+
+/* .david__btn {
+    background-color: darkblue;
+    border-radius: 16px;
+    height: 40px;
+    padding-block: 1rem;
+    padding-inline: 2rem;
+    transition-property: background-color;
+    transition-duration: 0.5s;
+    width: 40px;
+} */
+
+
+/* .david__btn:hover {
+    background-color: lightsteelblue;
+} */
+
+
+/* .david__btn { 
+    /* Some code */
+    /* transition: background-color 0.5s ease-in 0.2s;
+} */
+
+
+.david__btn {
+    background-color: darkblue;
+    color: #fff;
+    border-radius: 16px;
+    padding-block: 1rem;
+    padding-inline: 2rem;
+    transition: background-color 0.5s ease-in 0.2s, width 1s ease-out 0.5s;
+    animation: move 5s ease-out infinite;
+}
+
+
+.david__btn:hover {
+    background-color: lightsteelblue;
+    width: 60px;
+}
+
+
+@keyframes move {
+    
+
+    /* Some code */
+
+
+}
+
+@keyframes move {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+    50% {
+        transform: translate(0, 50px) rotate(180deg);
+    }
+    100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+}
+
+
+

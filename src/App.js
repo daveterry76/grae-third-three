@@ -20,7 +20,9 @@ import { Routes, Route } from 'react-router-dom';
 
 
 // import Week10 from './david-pol/week-10/Week10';
-import Week10 from './pol/week-10/Week10';
+// import Week10 from './pol/week-10/Week10';
+// import Week11 from './david-pol/week-11/Week11';
+import Week11 from './pol/week-11/Week11';
 
 
 function App() {
@@ -30,7 +32,8 @@ function App() {
 
   return (
     <>
-      <div className='flex justify-center flex-col items-center h-screen'>
+      {/* <div className='flex justify-center flex-col items-center h-screen'> */}
+      <div>
         <Router>
           <Routes>
             {/* <Route path='/' element={<Home />} />
@@ -46,7 +49,10 @@ function App() {
             {/* <Route path='/dashboard' element={<Dashboard name={name} setName={setName} track={track} setTrack={setTrack} />} /> */}
 
 
-            <Route path='/' element={<Week10 />} />
+            {/* <Route path='/' element={<Week10 />} /> */}
+            {/* <Route path='/' element={<Week11 />} /> */}
+            <Route path='/' element={<Week11 />} />
+
           </Routes>
         </Router>
       </div>
