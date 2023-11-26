@@ -22,7 +22,9 @@ import { Routes, Route } from 'react-router-dom';
 // import Week10 from './david-pol/week-10/Week10';
 // import Week10 from './pol/week-10/Week10';
 // import Week11 from './david-pol/week-11/Week11';
-import Week11 from './pol/week-11/Week11';
+// import Week11 from './pol/week-11/Week11';
+// import Week12 from './david-pol/week-12/Week12';
+import Week12 from './pol/week-12/Week12';
 
 
 function App() {
@@ -51,7 +53,8 @@ function App() {
 
             {/* <Route path='/' element={<Week10 />} /> */}
             {/* <Route path='/' element={<Week11 />} /> */}
-            <Route path='/' element={<Week11 />} />
+            {/* <Route path='/' element={<Week11 />} /> */}
+            <Route path='/' element={<Week12 />} />
 
           </Routes>
         </Router>
